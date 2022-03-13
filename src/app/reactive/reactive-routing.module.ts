@@ -13,8 +13,6 @@ const routes: Routes = [
       { path: 'switchs', component: SwitchsComponent },
       { path: '**', redirectTo: 'basics' }
     ]
-
-
   }
 ];
 

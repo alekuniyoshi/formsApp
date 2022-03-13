@@ -1,1 +1,59 @@
-<p>basics works!</p>
+<h2>Template: Basics</h2>
+
+<hr>
+
+<div class="row">
+  <div classs="col">
+    <form (ngSubmit)="save()" #myForm="ngForm">
+      <div class="mb-3 row">
+        <div class="col-sm-2 col-form-label">Product</div>
+        <div class="col-sm-10">
+          <input type="text" ngModel name="product" class="form-control" placeholder="Name of product" requiered
+            minlength="3">
+          <span *ngIf="validName()" class="form-text text-danger">Must be 3 letters</span>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-sm-2 col-form-label">Price</div>
+        <div class="col-sm-10">
+          <input type="number" ngModel name="price" class="form-control" placeholder="Price of product" requiered
+            min="0">
+          <span *ngIf="validPrice()" class="form-text text-danger">The price has to be greater or equals than
+            zero</span>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col-sm-2 col-form-label">Stock</div>
+        <div class="col-sm-10">
+          <input type="number" ngModel name="stock" class="form-control" placeholder="Stock of product" requiered
+            min="0">
+          <span *ngIf="validStock()" class="form-text text-danger">The stock has to be greater or equals than zero
+          </span>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <div class="col">
+          <button type="submit" class="btn btn-primary float-end" [disabled]="myForm.invalid">
+            Save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <span>Valid</span>
+    <pre>{{myForm.valid}}</pre>
+
+    <span>Pristine</span>
+    <pre>{{myForm.pristine}}</pre>
+
+    <span>Touched</span>
+    <pre>{{myForm.touched}}</pre>
+
+    <span>Value</span>
+    <pre>{{myForm.value|json}}</pre>
+  </div>
+</div>

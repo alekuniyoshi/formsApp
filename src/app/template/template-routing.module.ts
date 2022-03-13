@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       { path: 'basics', component: BasicsComponent },
       { path: 'dinamics', component: DinamicsComponent },
-      { path: 'swithcs', component: SwitchsComponent },
+      { path: 'switchs', component: SwitchsComponent },
       { path: '**', redirectTo: 'basics' }
     ]
   }
